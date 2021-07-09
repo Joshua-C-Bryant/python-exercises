@@ -74,8 +74,46 @@ enrollment_eligibility = class_not_full and no_class_conflicts
 enrollment_eligibility
 
 
-# In[ ]:
+# In[6]:
 
 
+#product offer eligibility
+def product_offer_eligibility():
+    if sales > 2 and date() > now():
+        return True
+    if premium_member and date() > now():
+        return True
+    else: False
 
+
+# In[7]:
+
+
+#usernam/password exercises
+username = 'codeup'
+password = 'notastrongpassword'
+
+
+# In[12]:
+
+
+if len(password) > 5 : True
+
+
+# In[14]:
+
+
+if len(username) > 20 : False
+
+
+# In[15]:
+
+
+if username == password : False
+
+
+# In[23]:
+
+
+if username[0] == " " or username[-1] == " " or password[0] == " " or password[-1] == " ": False
 
