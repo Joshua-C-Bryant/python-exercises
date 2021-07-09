@@ -62,12 +62,32 @@ for fruit in fruits:
 
 fruits_with_less_than_five_characters
 # Exercise 8 - Make a list containing the number of characters in each fruit. Output would be [5, 4, 10, etc... ]
+character_count = []
+for fruit in fruits:
+    character_count.append(len(fruit))
 
+character_count
 # Exercise 9 - Make a variable named fruits_with_letter_a that contains a list of only the fruits that contain the letter "a"
+fruits_with_letter_a = []
+for fruit in fruits:
+    if 'a' in fruit in fruits:
+        fruits_with_letter_a.append(fruit)
 
+fruits_with_letter_a
 # Exercise 10 - Make a variable named even_numbers that holds only the even numbers 
+even_numbers = []
+for n in numbers:
+    if n % 2 == 0:
+        even_numbers.append(n)
 
+even_numbers
 # Exercise 11 - Make a variable named odd_numbers that holds only the odd numbers
+odd_numbers = []
+for n in numbers:
+    if n % 2 != 0:
+        odd_numbers.append(n)
+
+odd_numbers
 
 # Exercise 12 - Make a variable named positive_numbers that holds only the positive numbers
 
