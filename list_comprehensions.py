@@ -31,27 +31,36 @@ for fruit in fruits:
 
 print(capitalized_fruits)
 
-# Exercise 3 - Use a list comprehension to make a variable named fruits_with_more_than_two_vowels. Hint: You'll need a way to check if something is a vowel.
-# STILL NEEDS WORK
+# Exercise 3 - Use a list comprehension to make a variable named 
+# fruits_with_more_than_two_vowels. Hint: You'll need a way to check if something is a vowel.
 
+
+# STILL NEEDS WORK
 fruits_with_more_than_two_vowels = []
 for fruit in fruits:
-    for vowel in ("a","e","i","o","u"):
-        if fruit.count(vowel) > 2:
+    vowels = 'aeiou'
+    count = 0
+    for c in fruit.lower():
+        count += 1
+        if count >= 2:
             fruits_with_more_than_two_vowels.append(fruit)
 
 print(fruits_with_more_than_two_vowels)
 
 # Exercise 4 - make a variable named fruits_with_only_two_vowels. The result should be ['mango', 'kiwi', 'strawberry']
-# STILL NEEDS WORK
 
+
+# STILL NEEDS WORK
 fruits = ['mango', 'kiwi', 'strawberry', 'guava', 'pineapple', 'mandarin orange']
 
 fruits_with_two_vowels = []
 for fruit in fruits:
-    for char in fruit:
-        if char in 'aeiou':
-            fruits_with_two_vowels.append(fruit)
+    count = 0
+    for c in fruit.lower():
+        if c in 'aeiou':
+            count += 1
+            if count == 2:
+                fruits_with_two_vowels.append(fruit)
 
 print(fruits_with_two_vowels)
 
