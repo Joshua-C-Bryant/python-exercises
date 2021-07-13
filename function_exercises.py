@@ -54,11 +54,11 @@ is_consonant("sxphn")
 
 def capitalized_consonant(string):
     # checks to see if the first letter of the string is a vowel
-    if str[0] in "aeiouAEIOU":
-        return str
+    if string[0] in "aeiouAEIOU":
+        return string
     # if its not, return the string with the first letter capitalized
     else:
-        return str.capitalize()
+        return string.capitalize()
 
 
 capitalized_consonant("saxophone")
@@ -71,10 +71,8 @@ capitalized_consonant("saxophone")
 # takes in two arguments, the tip amount as a decimal and the bill
 def calculate_tip(tip,bill):
     # calculates what the tip amount should be and adds it to the bill total
-    return (tip * bill) + bill
+    return tip * bill
 # another option is entering the tip as a whole number and divide it by 100
-
-# I did calculate the total bill...need to adjust
 calculate_tip(.2,20)
 
 # 6
@@ -109,6 +107,8 @@ def handle_commas(string):
         if char not in ",":
             number += char
     return float(number)
+
+handle_commas('1,2,3,4,5,6')
 
 # 8
 # Define a function named get_letter_grade. 
@@ -164,15 +164,24 @@ def normalize_name(string):
     return output
 
 # ANSWER?
-def normalize_name(name):
+def remove_symbols(name):
     cleaned = ""
     for char in name:
         if (char.isalnum() == True) or (char == " "):
             cleaned += char
     return cleaned
+def front_and_back(name):
+    while name[0].isalpha() == False:
+        name = name[1:]
+    return name.strip()
+def normalize_name(name):
+    name = remove_symbols(name)
+    name = front_and_back(name)
+    name = name.replace(" ","_")
+    name = name.lower()
+    return name
 
-normalize_name('    CAPITALIZED WITH SPACES    ')
-
+normalize_name("sSOGJD@3t02henglkdng3")
 
 # 11
 # Write a function named cumulative_sum that accepts a list of numbers 
