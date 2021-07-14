@@ -34,35 +34,49 @@ print(capitalized_fruits)
 # Exercise 3 - Use a list comprehension to make a variable named 
 # fruits_with_more_than_two_vowels. Hint: You'll need a way to check if something is a vowel.
 
-
-# STILL NEEDS WORK
-fruits_with_more_than_two_vowels = []
+fruit_vowels = []
+vowels = ['a','e','i','o','u']
 for fruit in fruits:
-    vowels = 'aeiou'
-    count = 0
-    for c in fruit.lower():
-        count += 1
-        if count >= 2:
-            fruits_with_more_than_two_vowels.append(fruit)
+    for char in fruit:
+        if char in vowels:
+            fruit_vowels.append(fruit)
+
+fruits_with_more_than_two_vowels_raw = []
+for fruit in fruit_vowels:
+    if fruit_vowels.count(fruit) > 2:
+        fruits_with_more_than_two_vowels_raw.append(fruit)
+
+
+fruits_with_more_than_two_vowels = []
+for fruit in fruits_with_more_than_two_vowels_raw:
+    if fruit not in fruits_with_more_than_two_vowels:
+        fruits_with_more_than_two_vowels.append(fruit)
 
 print(fruits_with_more_than_two_vowels)
 
 # Exercise 4 - make a variable named fruits_with_only_two_vowels. The result should be ['mango', 'kiwi', 'strawberry']
 
 
-# STILL NEEDS WORK
-fruits = ['mango', 'kiwi', 'strawberry', 'guava', 'pineapple', 'mandarin orange']
+fruit_vowels = []
+vowels = ['a','e','i','o','u']
+for fruit in fruits:
+    for char in fruit:
+        if char in vowels:
+            fruit_vowels.append(fruit)
+
+fruits_with_two_vowels_raw = []
+for fruit in fruit_vowels:
+    if fruit_vowels.count(fruit) == 2:
+        fruits_with_two_vowels_raw.append(fruit)
+
 
 fruits_with_two_vowels = []
-for fruit in fruits:
-    count = 0
-    for c in fruit.lower():
-        if c in 'aeiou':
-            count += 1
-            if count == 2:
-                fruits_with_two_vowels.append(fruit)
+for fruit in fruits_with_two_vowels_raw:
+    if fruit not in fruits_with_two_vowels:
+        fruits_with_two_vowels.append(fruit)
 
 print(fruits_with_two_vowels)
+
 
 # Exercise 5 - make a list that contains each fruit with more than 5 characters
 fruits_with_more_than_five_characters = []
@@ -169,5 +183,3 @@ for n in numbers:
 numbers_plus_5
 
 # BONUS Make a variable named "primes" that is a list containing the prime numbers in the numbers list. *Hint* you may want to make or find a helper function that determines if a given number is prime or not.
-
-primes = []
